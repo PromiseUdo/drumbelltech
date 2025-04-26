@@ -34,7 +34,7 @@ const PostsRenderer = ({
       <PostsReel
         title="Recent Posts"
         posts={blogPosts.items}
-        className="bg-gray-50"
+        className=""
         emptyTitle="No Recent Posts Found"
         emptyDescription={
           searchQuery
@@ -80,7 +80,7 @@ const Page = async ({
   const [blogPosts] = await getData(searchQuery);
 
   return (
-    <div className="w-full bg-white border border-b border-gray-300">
+    <div className="w-full bg-background border border-b border-gray-300">
       <Header />
       <Suspense
         fallback={

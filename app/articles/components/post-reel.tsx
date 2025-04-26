@@ -53,7 +53,7 @@ const PostsReel = ({
         <div className="border-white/20 relative backdrop-blur-lg">
           {/* Title */}
           <div className="mb-4 mt-5">
-            <p className="text-[#1e1e1e] font-medium uppercase text-sm tracking-wide">
+            <p className="text-[#f1d59f] font-medium uppercase text-sm tracking-wide">
               {title}
             </p>
           </div>

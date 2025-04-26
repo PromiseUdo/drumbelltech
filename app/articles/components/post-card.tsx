@@ -36,7 +36,7 @@ const PostCard = ({ post, className, readTime }: PostCardProps) => {
       >
         <Card
           className={cn(
-            "w-56 h-[30rem] flex-shrink-0 bg-white hover:shadow-md transition-shadow duration-300 rounded overflow-hidden border border-gray-100",
+            "w-56 h-[30rem] flex-shrink-0 bg-background hover:shadow-md transition-shadow duration-300 rounded overflow-hidden border border-[#f1d59f]",
             className
           )}
         >
@@ -59,14 +59,14 @@ const PostCard = ({ post, className, readTime }: PostCardProps) => {
 
             {/* Post Title */}
             <div className="px-4 py-1 mt-3 h-28">
-              <h3 className="text-[#1e1e1e] text-2xl line-clamp-4">
+              <h3 className="text-[#ffffff] text-2xl line-clamp-3">
                 {post?.fields?.title}
               </h3>
             </div>
 
             {/* Post Snippet */}
             <div className="px-4 flex-1">
-              <p className="text-sm text-gray-600 line-clamp-3">
+              <p className="text-sm text-muted-foreground line-clamp-4">
                 {postBodyText}
               </p>
             </div>
@@ -74,8 +74,8 @@ const PostCard = ({ post, className, readTime }: PostCardProps) => {
             {/* Read Time */}
             <div className="px-4 py-3">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#04306e]" />
-                <p className="text-xs text-gray-700">{readTime}</p>
+                <Clock className="w-4 h-4 text-[#f1d59f]" />
+                <p className="text-xs text-white">{readTime}</p>
               </div>
             </div>
           </CardContent>

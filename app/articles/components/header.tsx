@@ -34,9 +34,7 @@ const Header = () => {
       <MaxWidthWrapper>
         <div className="w-full flex flex-col justify-center sm:flex-row items-center sm:justify-between">
           {/* Blog Title */}
-          <h1 className="text-3xl mb-2 sm:mb-0 sm:text-4xl text-[#1e1e1e]">
-            Blog
-          </h1>
+          <h1 className="text-3xl mb-2 sm:mb-0 sm:text-4xl text-white">Blog</h1>
 
           {/* Search Input */}
           <form onSubmit={handleSearch} className="relative w-full sm:max-w-xs">

@@ -127,7 +127,7 @@ const Navbar = () => {
                 Products
               </Link>
               <Link
-                href="/"
+                href="/articles"
                 className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Articles
@@ -208,7 +208,7 @@ const Navbar = () => {
                 Products
               </Link>
               <Link
-                href="/about-us"
+                href="/articles"
                 className="py-2 text-white hover:text-safetyYellow transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
