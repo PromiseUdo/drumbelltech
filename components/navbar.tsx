@@ -149,57 +149,61 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 py-3 inset-x-0 bg-background">
       <header className="relative">
-        <MaxWidthWrapper>
-          <div className="flex items-center justify-between">
-            <div className="flex md:items-center space-y-4 md:space-y-0 md:space-x-24 flex-col md:flex-row">
-              <div className="flex rounded-md">
-                <Link
-                  href="/"
-                  className="text-foreground text-xl flex items-center glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
-                >
-                  Drumbell Tech
-                </Link>
-              </div>
-              <div className="hidden md:flex items-center gap-10">
-                <Link
-                  href="/"
-                  className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="/"
-                  className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
-                >
-                  Services
-                </Link>
-                <Link
-                  href="/"
-                  className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
-                >
-                  Products
-                </Link>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                aria-label={
-                  isDarkMode ? "Switch to light mode" : "Switch to dark mode"
-                }
-                className="glassy-effect p-2 rounded-md hover:bg-accent/50 transition-colors duration-200"
+        <div className="flex items-center justify-between">
+          <div className="flex md:items-center space-y-4 md:space-y-0 md:space-x-24 flex-col md:flex-row">
+            <div className="flex rounded-md">
+              <Link
+                href="/"
+                className="text-foreground text-xl flex items-center glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
-                {isDarkMode ? (
-                  <Sun className="w-5 h-5 text-yellow-400" />
-                ) : (
-                  <Moon className="w-5 h-5 text-muted-foreground" />
-                )}
-              </Button>
+                Drumbell Tech
+              </Link>
+            </div>
+            <div className="hidden md:flex items-center gap-10">
+              <Link
+                href="/"
+                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+              >
+                About Us
+              </Link>
+              <Link
+                href="/"
+                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+              >
+                Services
+              </Link>
+              <Link
+                href="/"
+                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+              >
+                Products
+              </Link>
+              <Link
+                href="/"
+                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+              >
+                Articles
+              </Link>
             </div>
           </div>
-        </MaxWidthWrapper>
+          <div className="hidden md:flex items-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label={
+                isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+              }
+              className="glassy-effect p-2 rounded-md hover:bg-accent/50 transition-colors duration-200"
+            >
+              {isDarkMode ? (
+                <Sun className="w-5 h-5 text-yellow-400" />
+              ) : (
+                <Moon className="w-5 h-5 text-muted-foreground" />
+              )}
+            </Button>
+          </div>
+        </div>
       </header>
     </div>
   );
