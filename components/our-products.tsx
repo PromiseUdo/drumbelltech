@@ -11,14 +11,14 @@ const products = [
   {
     id: 1,
     name: "GetChatBank",
-    image: "/chatbank.png",
+    image: "/chatbank.PNG",
     link: "https://getchatbank.com/",
     description: `Secure Messaging and Banking in One App. Chatbank integrates secure messaging, advanced banking, and robust security into a seamless experience. Join the waitlist for early access.`,
   },
   {
     id: 2,
     name: "Bloomgram",
-    image: "/blomgram.png",
+    image: "/blomgram.PNG",
     link: "https://blomgram.com/",
     description: `Experience real-time insights, automated trading, and a vibrant community that empowers you to trade smarter. Blomgram is not just a platform; it's a movement that gives you the tools and the freedom to exchange currencies on your terms.`,
   },
@@ -124,7 +124,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
                 <motion.span
                   key={`${lineIndex}-${wordIndex}`}
                   style={{ color }}
-                  className="mt-[0.5rem] inline-block whitespace-pre-wrap mr-2"
+                  className="md:mt-[0.5rem] inline-block whitespace-pre-wrap mr-2"
                 >
                   {word}
                 </motion.span>
