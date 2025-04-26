@@ -160,7 +160,7 @@ const Navbar = () => {
                   Drumbell Tech
                 </Link>
               </div>
-              <div className="flex items-center gap-10">
+              <div className="hidden md:flex items-center gap-10">
                 <Link
                   href="/"
                   className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
