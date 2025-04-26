@@ -26,7 +26,7 @@ const products = [
 
 const OurProducts = () => {
   return (
-    <div className="w-full bg-background mt-16">
+    <div className="w-full bg-background mt-[1.5rem] md:mt-[3rem]">
       <h2 className="text-[#f1d59f] text-lg tracking-wide mb-8">
         Our Products
       </h2>

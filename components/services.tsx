@@ -29,7 +29,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="w-full overflow-hidden py-16 bg-background relative">
+    <div className="w-full overflow-hidden mt-[1.5rem] md:mt-[3rem] bg-background relative">
       <h2 className="text-[#f1d59f] text-lg tracking-wide mb-8">
         Our Services
       </h2>

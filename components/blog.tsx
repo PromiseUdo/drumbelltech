@@ -106,7 +106,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-12 relative">
+    <section ref={sectionRef} className="mt-[1.5rem] md:mt-[3rem] relative">
       <h2 className="text-lg  mb-8 text-[#f1d59f]">Recent Articles</h2>
       <div
         ref={containerRef}
@@ -119,7 +119,7 @@ const Blog = () => {
             ref={(el: HTMLDivElement | null) => {
               cardsRef.current[index] = el;
             }}
-            className="border border-[#f1d59f] w-full h-[400px] bg-card text-card-foreground rounded-2xl shadow-lg overflow-hidden"
+            className="border border-[#f1d59f] w-full h-[500px] md:h-[400px] bg-card text-card-foreground rounded-2xl shadow-lg overflow-hidden"
             style={{ willChange: "transform, z-index, opacity" }}
           >
             <div className="flex flex-col md:flex-row h-full">
