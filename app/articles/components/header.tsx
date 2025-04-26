@@ -43,7 +43,7 @@ const Header = () => {
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded w-full text-[#1e1e1e] placeholder-gray-400"
+              className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded w-full text-white placeholder-gray-400"
               aria-label="Search blog posts"
             />
             <button
@@ -51,7 +51,7 @@ const Header = () => {
               className="absolute inset-y-0 right-0 flex items-center pr-3"
             >
               <Search
-                className="h-5 w-5 text-gray-400 hover:text-[#04306e]"
+                className="h-5 w-5 text-white hover:text-[#04306e]"
                 aria-hidden="true"
               />
             </button>

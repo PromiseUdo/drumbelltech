@@ -25,7 +25,7 @@ const PostCard = ({ post, className, readTime }: PostCardProps) => {
 
   // Safely access slug, fallback to a default or disable link
   const slug = post?.fields?.slug || null;
-  const href = slug ? `/blog/${slug}` : "#"; // Fallback to "#" if no slug
+  const href = slug ? `/articles/${slug}` : "#"; // Fallback to "#" if no slug
 
   return (
     <motion.div transition={{ duration: 0.2, ease: "easeOut" }}>

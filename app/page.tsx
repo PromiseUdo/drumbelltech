@@ -1,4 +1,5 @@
-import Blog from "@/components/blog";
+// import Blog from "@/components/blog";
+import BlogServer from "@/components/blog-server";
 import Connect from "@/components/connect";
 import LoaderWrapper from "@/components/loader-wrapper";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
@@ -23,7 +24,7 @@ export default function Home() {
             </div>
             <OurProducts />
             <Services />
-            <Blog />
+            <BlogServer />
             <Connect />
           </div>
         </MaxWidthWrapper>

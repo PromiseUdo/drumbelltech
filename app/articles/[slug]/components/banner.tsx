@@ -3,7 +3,7 @@ import MaxWidthWrapper from "@/components/max-width-wrapper";
 import React from "react";
 import Image from "next/image";
 import readingTime from "reading-time";
-import { extractTextFromPostBody } from "../../post-reel";
+import { extractTextFromPostBody } from "../../components/post-reel";
 
 const Banner = ({
   title,

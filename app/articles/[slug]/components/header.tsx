@@ -39,7 +39,7 @@ const Header = ({ title = "Default Blog Title" }) => {
   }, []);
 
   return (
-    <div className="sticky top-16 z-20 bg-white shadow-md">
+    <div className="border-b border-gray-900 sticky top-16 z-20 bg-background shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         {/* Left: Back Button and Title */}
         <div className="flex items-center gap-2 md:gap-5">
@@ -47,15 +47,15 @@ const Header = ({ title = "Default Blog Title" }) => {
             href="/blog"
             className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
-            <ChevronLeft className="w-5 h-5 mr-2" />
+            <ChevronLeft className="w-5 h-5 mr-2 text-white" />
 
-            <h2 className=" md:hidden text-sm text-gray-500 truncate max-w-[80%] sm:max-w-[90%]">
+            <h2 className=" md:hidden text-sm text-[#f1d59f] truncate max-w-[80%] sm:max-w-[90%]">
               Go back
             </h2>
           </Link>
 
           {/* Post Title */}
-          <h2 className="hidden md:block text-sm text-gray-500 truncate max-w-[80%] sm:max-w-[90%]">
+          <h2 className="hidden md:block text-sm text-[#f1d59f]  truncate max-w-[80%] sm:max-w-[90%]">
             {title}
           </h2>
         </div>

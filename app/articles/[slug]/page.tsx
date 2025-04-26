@@ -29,7 +29,7 @@ const page = async ({ params }: { params: IParams }) => {
     ? `https:${blogPost.fields.featuredImage.fields.file.url}`
     : "/default-image.jpg"; // Fallback image
   return (
-    <div className="border border-b pb-6 md:pb-12 border-gray-300 w-full bg-white">
+    <div className="border-b pb-6 md:pb-12 border-gray-300 w-full bg-background ">
       <Banner
         title={String(blogPost?.fields?.title ?? "")}
         date={format(blogPost?.sys?.createdAt, "d MMM yyy")}
