@@ -75,7 +75,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
           alt={product.name}
           width={1200}
           height={700}
-          className="w-full h-auto md:h-[450px] object-cover rounded-2xl"
+          className="w-full h-[16rem] md:h-[450px] object-cover rounded-2xl"
           priority
         />
 
@@ -103,7 +103,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
       {/* Animated Description */}
       <div
         ref={textRef}
-        className="text-3xl mt-6 sm:text-4xl md:text-5xl font-medium leading-loose"
+        className="text-3xl mt-3 md:mt-6 sm:text-4xl md:text-5xl font-medium "
       >
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="inline-block">
