@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { extractTextFromPostBody } from "@/app/articles/components/post-reel";
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ interface BlogPost {
   title: string;
   description: string;
   image: string;
+  slug: string;
 }
 
 interface BlogClientProps {
@@ -107,6 +109,7 @@ const BlogClient = ({ featuredPosts }: BlogClientProps) => {
         {featuredPosts.map((post: any, index) => {
           const postBodyText = extractTextFromPostBody(post?.description);
           const imageUrl = `https:${post.image}`; // Fallback image
+
           return (
             <div
               key={index}
@@ -132,15 +135,15 @@ const BlogClient = ({ featuredPosts }: BlogClientProps) => {
                   <p className="text-base text-muted-foreground line-clamp-4">
                     {postBodyText}
                   </p>
-                  <a
-                    href="#"
+                  <Link
+                    href={`/articles/${post?.slug}`}
                     target="_blank"
                     className="flex items-center space-x-2 mt-4 text-sm  text-[#f1d59f] hover:underline"
                   >
                     <span>Read More</span>
 
                     <ExternalLink className="w-4 h-4 text-[#f1d59f]" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +45,7 @@ export default function RootLayout({
           >
             <MessageCircle className="w-7 h-7" />
           </Link>
+          <Footer />
         </main>
       </body>
     </html>

@@ -8,11 +8,10 @@ import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
-  const [isLoading, setIsLoading] = useState(true); // Track loader state
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // Start hidden
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
-
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const iconVariants: Variants = {
@@ -49,7 +48,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Toggle theme and update document class
+  // Toggle theme
   const toggleTheme = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
@@ -57,7 +56,7 @@ const Navbar = () => {
     localStorage.setItem("theme", newMode ? "dark" : "light");
   };
 
-  // Sync theme and check loader state
+  // Sync theme and listen for loader completion
   useEffect(() => {
     // Theme sync
     const savedTheme = localStorage.getItem("theme");
@@ -69,21 +68,20 @@ const Navbar = () => {
       localStorage.setItem("theme", "dark");
     }
 
-    // Check if loader has completed
-    const hasLoaded = sessionStorage.getItem("hasLoaded");
-    if (hasLoaded) {
+    // Check initial hasLoaded state
+    if (sessionStorage.getItem("hasLoaded")) {
       setIsLoading(false);
-    } else {
-      // Poll for hasLoaded to handle async loader completion
-      const checkLoaded = setInterval(() => {
-        if (sessionStorage.getItem("hasLoaded")) {
-          setIsLoading(false);
-          clearInterval(checkLoaded);
-        }
-      }, 100); // Check every 100ms
-
-      return () => clearInterval(checkLoaded);
     }
+
+    // Listen for loader completion
+    const handleLoaderComplete = () => {
+      setIsLoading(false);
+    };
+    window.addEventListener("loaderComplete", handleLoaderComplete);
+
+    return () => {
+      window.removeEventListener("loaderComplete", handleLoaderComplete);
+    };
   }, []);
 
   // Hide navbar during loading
@@ -92,10 +90,7 @@ const Navbar = () => {
   }
 
   return (
-    <div
-      ref={navRef}
-      className=" sticky top-0 z-50 py-3 inset-x-0 bg-background"
-    >
+    <div ref={navRef} className="sticky top-0 z-50 py-3 inset-x-0">
       <MaxWidthWrapper className="relative">
         <div className="flex items-center justify-between">
           <div className="flex md:items-center space-y-4 md:space-y-0 md:space-x-24 flex-col md:flex-row">
@@ -152,7 +147,7 @@ const Navbar = () => {
             </Button>
           </div>
 
-          {/* mobile trigger */}
+          {/* Mobile trigger */}
           <div className="md:hidden flex items-center gap-4">
             <Button
               variant="ghost"
@@ -179,7 +174,7 @@ const Navbar = () => {
           variants={mobileMenuVariants}
           initial="closed"
           animate={isMenuOpen ? "open" : "closed"}
-          className="fixed top-[4rem] left-0 right-0 md:hidden border-b border-t border-[#f1d59f50]  bg-background shadow-lg z-50 overflow-y-auto"
+          className="fixed top-[4rem] left-0 right-0 md:hidden border-b border-t border-[#f1d59f50] bg-background shadow-lg z-50 overflow-y-auto"
           style={{
             maxHeight: "calc(100vh - 4rem)",
           }}
@@ -187,51 +182,33 @@ const Navbar = () => {
           <div className="px-4 py-4 space-y-1">
             <div className="flex flex-col items-start space-y-1">
               <Link
-                href="/courses"
-                className="py-2 text-white hover:text-safetyYellow transition-colors duration-200"
+                href="/"
+                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
-                href={`/courses?category=${encodeURIComponent("Individuals")}`}
-                className="py-2 text-white hover:text-safetyYellow transition-colors duration-200"
+                href="/"
+                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
-                href="/about-us"
-                className="py-2 text-white hover:text-safetyYellow transition-colors duration-200"
+                href="/"
+                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Products
               </Link>
               <Link
                 href="/articles"
-                className="py-2 text-white hover:text-safetyYellow transition-colors duration-200"
+                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Articles
               </Link>
-
-              {/* <Button
-                asChild
-                variant={"outline"}
-                size={"lg"}
-                className="w-full border-2 !rounded hover:text-white border-[#04306e] hover:bg-[#04306e]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Link href="/blog">Blog</Link>
-              </Button> */}
-              {/* <Button
-                asChild
-                size={"lg"}
-                className="w-full mt-2 text-white !rounded bg-[#05418f] hover:bg-[#04306e]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Link href="/contact-us">Contact</Link>
-              </Button> */}
             </div>
           </div>
         </motion.div>

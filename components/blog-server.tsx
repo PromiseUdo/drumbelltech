@@ -37,6 +37,7 @@ export default async function BlogServer({
     title: post.fields.title || "Untitled",
     description: post?.fields?.postBody || "No description",
     image: post?.fields?.featuredImage?.fields?.file?.url || "/app1.png", // Fallback image
+    slug: post?.fields?.slug || null
   }));
 
   return <BlogClient featuredPosts={featuredPosts} />;
