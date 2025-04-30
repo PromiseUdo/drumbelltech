@@ -17,7 +17,7 @@ interface IParams {
 
 const page = async ({ params }: { params: IParams }) => {
   const { items } = await client.getEntries({
-    content_type: "blogPost",
+    content_type: "drumbellTech",
     "fields.slug": params.slug,
   });
 
