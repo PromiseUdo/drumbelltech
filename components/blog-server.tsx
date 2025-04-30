@@ -8,7 +8,7 @@ async function getData(searchQuery: string = "") {
   });
 
   const query: any = {
-    content_type: "blogPost",
+    content_type: "drumbellTech",
   };
 
   if (searchQuery.trim()) {
@@ -37,7 +37,7 @@ export default async function BlogServer({
     title: post.fields.title || "Untitled",
     description: post?.fields?.postBody || "No description",
     image: post?.fields?.featuredImage?.fields?.file?.url || "/app1.png", // Fallback image
-    slug: post?.fields?.slug || null
+    slug: post?.fields?.slug || null,
   }));
 
   return <BlogClient featuredPosts={featuredPosts} />;

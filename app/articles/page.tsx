@@ -53,7 +53,7 @@ async function getData(searchQuery: string = "") {
   });
 
   const query: any = {
-    content_type: "blogPost",
+    content_type: "drumbellTech",
   };
 
   // Add search filter if query exists

@@ -90,7 +90,7 @@ const Navbar = () => {
   }
 
   return (
-    <div ref={navRef} className="sticky top-0 z-50 py-3 inset-x-0">
+    <div ref={navRef} className="sticky top-0 z-50 py-3 inset-x-0 bg-black">
       <MaxWidthWrapper className="relative">
         <div className="flex items-center justify-between">
           <div className="flex md:items-center space-y-4 md:space-y-0 md:space-x-24 flex-col md:flex-row">
