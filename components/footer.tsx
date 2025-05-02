@@ -26,7 +26,7 @@ const Footer = () => {
       links: [
         { label: "About Us", href: "/" },
         { label: "Products", href: "/" },
-        { label: "Contact", href: "/" },
+        { label: "Contact Us", href: "/contact-us" },
         { label: "Articles", href: "/articles" },
       ],
     },
@@ -42,8 +42,8 @@ const Footer = () => {
     {
       heading: "Products",
       links: [
-        { label: "GetChatBank", href: "/" },
-        { label: "Bloomgram", href: "/" },
+        { label: "GetChatBank", href: "https://getchatbank.com/" },
+        { label: "Bloomgram", href: "https://blomgram.com/" },
       ],
     },
     {

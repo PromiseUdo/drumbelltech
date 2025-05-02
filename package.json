@@ -11,6 +11,9 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
     "@contentful/rich-text-types": "^17.0.0",
+    "@hookform/resolvers": "^5.0.1",
+    "@marsidev/react-turnstile": "^1.1.0",
+    "@radix-ui/react-label": "^2.1.4",
     "@radix-ui/react-slot": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -20,15 +23,19 @@
     "gsap": "^3.12.7",
     "lucide-react": "^0.503.0",
     "next": "14.2.4",
+    "next-safe-action": "^7.10.8",
     "next-themes": "^0.4.6",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.56.1",
     "react-icons": "^5.5.0",
     "react-share": "^5.2.2",
     "reading-time": "^1.5.0",
+    "resend": "^4.4.1",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@types/node": "^20",
