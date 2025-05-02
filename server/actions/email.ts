@@ -14,7 +14,7 @@ export const sendContactFormEmail = async (
 ) => {
   const { data, error } = await resend.emails.send({
     from: "Drumbell Technologies <no-reply@gustoprofessionals.com>",
-    to: "info.promiseudo@gmail.com",
+    to: "fortuneokwu@gmail.com",
     subject: "Confirmation Email",
     react: AdminEmailTemplate({
       name,
