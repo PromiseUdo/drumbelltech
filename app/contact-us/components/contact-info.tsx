@@ -2,7 +2,12 @@
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 
 import { motion } from "framer-motion";
-import { FaEnvelope, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const ContactInfo = () => {
   return (
@@ -11,47 +16,47 @@ const ContactInfo = () => {
         <div>
           <div className="flex flex-col md:flex-row justify-center gap-3 md:gap-12">
             <motion.div className="group flex items-center gap-4 border border-[#f1d59f] hover:bg-gray-50 p-4 rounded  transition-all duration-300">
-              <FaFacebookF className="h-6 w-6 md:h-10 md:w-10 text-[#ffffff] flex-shrink-0 group-hover:text-[#1e1e1e]" />
+              <FaLinkedin className="h-5 w-5 md:h-10 md:w-10 text-[#ffffff] flex-shrink-0 group-hover:text-[#1e1e1e]" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-[#1e1e1e]">
-                  Facebook
+                <p className=" font-nbMono text-xs font-semibold text-white group-hover:text-[#1e1e1e]">
+                  Linkedin
                 </p>
                 <a
                   href="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground group-hover:text-[#1e1e1e] hover:text-safetyYellow text-sm "
+                  className="font-nbMono text-muted-foreground group-hover:text-[#1e1e1e] hover:text-safetyYellow text-xs "
                 >
-                  Follow us on Facebook
+                  Follow us on Linkedin
                 </a>
               </div>
             </motion.div>
 
             <motion.div className="group flex items-center gap-4 border border-[#f1d59f] hover:bg-gray-50 p-4 rounded  transition-all duration-300">
-              <FaWhatsapp className="h-6 w-6 md:h-10 md:w-10 text-[#ffffff] flex-shrink-0 group-hover:text-[#1e1e1e]" />
+              <FaWhatsapp className="h-5 w-5 md:h-10 md:w-10 text-[#ffffff] flex-shrink-0 group-hover:text-[#1e1e1e]" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-[#1e1e1e]">
+                <p className="font-nbMono text-xs font-semibold text-white group-hover:text-[#1e1e1e]">
                   WhatsApp
                 </p>
                 <a
                   href="https://wa.me/+447899365494"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group-hover:text-[#1e1e1e] text-muted-foreground hover:text-safetyYellow text-sm "
+                  className="font-nbMono group-hover:text-[#1e1e1e] text-muted-foreground hover:text-safetyYellow text-xs "
                 >
                   +44 7899 365494
                 </a>
               </div>
             </motion.div>
             <motion.div className="group flex items-center border border-[#f1d59f] gap-4 hover:bg-gray-50 p-4 rounded transition-all duration-300">
-              <FaEnvelope className="group-hover:text-[#1e1e1e] h-6 w-6 md:h-10 md:w-10 text-[#ffffff] flex-shrink-0" />
+              <FaEnvelope className="group-hover:text-[#1e1e1e] h-5 w-5 md:h-10 md:w-10 text-[#ffffff] flex-shrink-0" />
               <div>
-                <p className="group-hover:text-[#1e1e1e] text-sm font-semibold text-[#ffffff]">
+                <p className="font-nbMono group-hover:text-[#1e1e1e] text-xs font-semibold text-[#ffffff]">
                   Email
                 </p>
                 <a
                   href="mailto:info.gustoprofessionals@gmail.com"
-                  className="group-hover:text-[#1e1e1e] text-muted-foreground  text-sm "
+                  className="font-nbMono group-hover:text-[#1e1e1e] text-muted-foreground  text-xs "
                 >
                   fortuneokwu@gmail.com
                 </a>

@@ -30,7 +30,7 @@ const services = [
 export default function Services() {
   return (
     <div className="w-full overflow-hidden mt-[1.5rem] md:mt-[3rem] bg-background relative">
-      <h2 className="text-[#f1d59f] text-lg tracking-wide mb-8">
+      <h2 className="text-[#f1d59f] font-nbInternational text-xs uppercase tracking-wide mb-8">
         Our Services
       </h2>
 
@@ -44,10 +44,12 @@ export default function Services() {
                 className="w-[300px] mx-4 mt-0.5 px-4 h-[350px] border border-[#f1d59f] rounded-2xl bg-transparent backdrop-blur-sm flex flex-col justify-center items-start"
               >
                 <Icon className="w-[50px] h-[50px] text-white mb-4" />
-                <h3 className="text-[#f1d59f] font-semibold text-lg mb-2">
+                <h3 className="text-[#f1d59f] text-xs uppercase font-semibold font-nbInternational mb-2">
                   {service.title}
                 </h3>
-                <p className="text-white text-sm">{service.description}</p>
+                <p className="text-white text-xs font-nbMono">
+                  {service.description}
+                </p>
               </div>
             );
           })}

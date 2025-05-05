@@ -87,8 +87,8 @@ const ContactFormAndMap = () => {
         >
           {/* Contact Form */}
           <div className="p-3 md:p-8 rounded border border-[#f1d59f]">
-            <h2 className="text-2xl font-bold text-[#f1d59f] mb-6">
-              Get in Touch
+            <h2 className="font-nbInternational text-5xl font-bold text-[#f1d59f] mb-6">
+              Send Message
             </h2>
             <Form {...form}>
               <form
@@ -102,7 +102,7 @@ const ContactFormAndMap = () => {
                     <FormItem>
                       <FormControl>
                         <Input
-                          className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
+                          className="font-nbMono focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
                           placeholder="Your name"
                           {...field}
                         />
@@ -118,7 +118,7 @@ const ContactFormAndMap = () => {
                     <FormItem>
                       <FormControl>
                         <Input
-                          className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
+                          className="font-nbMono focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
                           placeholder="Your Whatsapp number (optional)"
                           {...field}
                         />
@@ -134,7 +134,7 @@ const ContactFormAndMap = () => {
                     <FormItem>
                       <FormControl>
                         <Input
-                          className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
+                          className="font-nbMono focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
                           placeholder="Your email"
                           {...field}
                         />
@@ -150,7 +150,7 @@ const ContactFormAndMap = () => {
                     <FormItem>
                       <FormControl>
                         <Textarea
-                          className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
+                          className="font-nbMono focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded"
                           placeholder="Your message"
                           rows={5}
                           {...field}
@@ -166,7 +166,7 @@ const ContactFormAndMap = () => {
                   name="cf-turnstile-response"
                   render={({ field }) => (
                     <FormItem className="w-full relative">
-                      <FormLabel className="text-sm !font-normal text-gray-500">
+                      <FormLabel className="font-nbMono text-sm !font-normal text-gray-500">
                         Let us know you're human
                       </FormLabel>
                       <FormControl>
@@ -194,7 +194,7 @@ const ContactFormAndMap = () => {
                   type="submit"
                   size="lg"
                   disabled={isExecuting}
-                  className="w-full bg-[#f6deb2] hover:bg-[#f1d59f] "
+                  className=" font-nbMono w-full bg-[#f6deb2] hover:bg-[#f1d59f] "
                 >
                   {isExecuting ? (
                     <>

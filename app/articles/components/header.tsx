@@ -34,7 +34,9 @@ const Header = () => {
       <MaxWidthWrapper>
         <div className="w-full flex flex-col justify-center sm:flex-row items-center sm:justify-between">
           {/* Blog Title */}
-          <h1 className="text-3xl mb-2 sm:mb-0 sm:text-4xl text-white">Blog</h1>
+          <h1 className="text-5xl font-nbInternational  text-white">
+            Articles
+          </h1>
 
           {/* Search Input */}
           <form onSubmit={handleSearch} className="relative w-full sm:max-w-xs">
@@ -43,7 +45,7 @@ const Header = () => {
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded w-full text-white placeholder-gray-400"
+              className="font-nbMono focus-visible:!ring-[#04306e] focus-visible:!ring-2 mt-1 py-6 shadow-none border-gray-300 !rounded w-full text-white placeholder-gray-400"
               aria-label="Search blog posts"
             />
             <button

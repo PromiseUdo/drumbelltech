@@ -105,7 +105,9 @@ const BlogClient = ({ featuredPosts }: BlogClientProps) => {
 
   return (
     <section ref={sectionRef} className="mt-[1.5rem] md:mt-[3rem] relative">
-      <h2 className="text-lg mb-8 text-[#f1d59f]">Recent Articles</h2>
+      <h2 className="text-xs uppercase mb-8 text-[#f1d59f] font-nbInternational">
+        Recent Articles
+      </h2>
       <div
         ref={containerRef}
         className="blog-cards-container relative"
@@ -136,14 +138,16 @@ const BlogClient = ({ featuredPosts }: BlogClientProps) => {
                   />
                 </div>
                 <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold mb-2">{post.title}</h3>
-                  <p className="text-base text-muted-foreground line-clamp-4">
+                  <h3 className="text-xs uppercase font-semibold mb-2 font-nbInternational">
+                    {post.title}
+                  </h3>
+                  <p className="font-nbMono text-xs leading-[18px] text-muted-foreground line-clamp-4">
                     {postBodyText}
                   </p>
                   <Link
                     href={`/articles/${post?.slug}`}
                     target="_blank"
-                    className="flex items-center space-x-2 mt-4 text-sm text-[#f1d59f] hover:underline"
+                    className="font-nbMono flex items-center space-x-2 mt-4 text-xs text-[#f1d59f] hover:underline"
                   >
                     <span>Read More</span>
                     <ExternalLink className="w-4 h-4 text-[#f1d59f]" />

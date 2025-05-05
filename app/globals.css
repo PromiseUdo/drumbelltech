@@ -86,3 +86,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: "NB International Pro Bold";
+  src: url("/fonts/NB-International-Pro-Bold.woff") format("woff");
+
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap; /* Improves loading performance */
+}
+
+@font-face {
+  font-family: "NB International Pro Mono";
+  src:
+    url("/fonts/nb_international_pro_mono-webfont.woff") format("woff"),
+    url("/fonts/nb_international_pro_mono-webfont.ttf") format("truetype");
+  font-weight: 400; /* Assuming this is a regular weight; adjust if it's different */
+  font-style: normal;
+  font-display: swap;
+}

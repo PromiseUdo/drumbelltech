@@ -86,27 +86,26 @@ const Connect = () => {
 
   return (
     <div className="w-full overflow-hidden  py-12 md:py-0 mt-[12rem] md:mt-[5rem]  relative">
-      <h2 className="text-[#f1d59f] text-lg tracking-wide mb-8 ">
+      <h2 className="text-[#f1d59f] text-xs uppercase tracking-wide mb-8 font-nbInternational">
         Connect with us
       </h2>
       <div className="space-x-4 flex flex-start w-full">
         {/* bg-gray-900  */}
-        {[
-          { icon: <Linkedin size={40} />, label: "LinkedIn" },
-          { icon: <Instagram size={40} />, label: "Instagram" },
-        ].map((item, index) => (
-          <div
-            key={index}
-            ref={(el: HTMLDivElement | null) => {
-              boxesRef.current[index] = el;
-            }}
-            className="group relative rounded-2xl border border-[#f1d59f] w-[10rem] h-32 flex items-center justify-center overflow-hidden cursor-pointer"
-          >
-            <div className="relative z-10 text-[#f1d59f] group-hover:text-gray-900 transition-colors duration-500">
-              {item.icon}
+        {[{ icon: <Linkedin size={40} />, label: "LinkedIn" }].map(
+          (item, index) => (
+            <div
+              key={index}
+              ref={(el: HTMLDivElement | null) => {
+                boxesRef.current[index] = el;
+              }}
+              className="group relative rounded-2xl border border-[#f1d59f] w-[8rem] h-24 flex items-center justify-center overflow-hidden cursor-pointer"
+            >
+              <div className="relative z-10 text-[#f1d59f] group-hover:text-gray-900 transition-colors duration-500">
+                {item.icon}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   );

@@ -97,7 +97,7 @@ const Navbar = () => {
             <div className="flex rounded-md">
               <Link
                 href="/"
-                className="text-foreground text-xl flex items-center glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+                className="font-nbInternational text-foreground text-xl flex items-center glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Drumbell Tech
               </Link>
@@ -105,25 +105,25 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-10">
               <Link
                 href="/"
-                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+                className="font-nbInternational  text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 About Us
               </Link>
               <Link
                 href="/"
-                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+                className="font-nbInternational   text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Services
               </Link>
               <Link
                 href="/"
-                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+                className="font-nbInternational  text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Products
               </Link>
               <Link
                 href="/articles"
-                className="text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
+                className="font-nbInternational  text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Articles
               </Link>

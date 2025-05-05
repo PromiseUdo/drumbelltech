@@ -17,7 +17,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Bloomgram",
+    name: "Blomgram",
     image: "/blomgram.PNG",
     link: "https://blomgram.com/",
     description: `Experience real-time insights, automated trading, and a vibrant community that empowers you to trade smarter. Blomgram is not just a platform; it's a movement that gives you the tools and the freedom to exchange currencies on your terms.`,
@@ -27,7 +27,7 @@ const products = [
 const OurProducts = () => {
   return (
     <div className="w-full bg-background mt-[1.5rem] md:mt-[3rem]">
-      <h2 className="text-[#f1d59f] text-lg tracking-wide mb-8">
+      <h2 className="text-[#f1d59f] uppercase text-xs font-nbInternational tracking-wide mb-8">
         Our Products
       </h2>
 
@@ -86,13 +86,13 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
             group-hover:h-16 group-hover:opacity-100
             transition-all duration-500 ease-out overflow-hidden"
         >
-          <span className="text-[#f1d59f] font-medium text-sm md:text-base">
+          <span className="text-[#f1d59f] uppercase font-nbInternational text-xs font-medium ">
             {product.name}
           </span>
           <a
             target="_blank"
             href={product.link}
-            className="text-white text-sm md:text-base hover:text-[#f1d59f]
+            className="text-white text-xs  hover:text-[#f1d59f]
               transition-colors duration-200"
           >
             <ExternalLinkIcon className="h-5 w-5 md:h-6 md:w-6" />
@@ -103,7 +103,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
       {/* Animated Description */}
       <div
         ref={textRef}
-        className="text-3xl mt-3 md:mt-6 sm:text-4xl md:text-5xl font-medium "
+        className="font-nbMono mt-3 md:mt-6 text-5xl font-medium "
       >
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="inline-block">

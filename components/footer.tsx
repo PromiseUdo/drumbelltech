@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaWhatsapp,
   FaInstagram,
+  FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
@@ -84,7 +85,7 @@ const Footer = () => {
         <div className="hidden md:grid md:grid-cols-4 gap-8">
           {footerContent.map((column, idx) => (
             <div key={idx} className="space-y-4">
-              <h3 className="text-lg font-semibold text-white tracking-tight">
+              <h3 className="font-nbInternational uppercase text-xs font-semibold text-white tracking-tight">
                 {column.heading}
               </h3>
               <ul className="space-y-2">
@@ -92,7 +93,7 @@ const Footer = () => {
                   <li key={linkIdx}>
                     <Link
                       href={link.href}
-                      className="text-muted-foreground hover:text-[#f1d59f] hover:underline underline-offset-4 transition-all duration-200 ease-in-out"
+                      className="font-nbMono text-muted-foreground text-xs hover:text-[#f1d59f] hover:underline uppercase underline-offset-4 transition-all duration-200 ease-in-out"
                     >
                       {link.label}
                     </Link>
@@ -116,7 +117,7 @@ const Footer = () => {
                 aria-expanded={openSection === idx}
                 aria-controls={`accordion-content-${idx}`}
               >
-                <h3 className="text-lg font-semibold text-white tracking-tight">
+                <h3 className="font-nbInternational text-xs font-semibold text-white tracking-tight">
                   {column.heading}
                 </h3>
                 {openSection === idx ? (
@@ -136,7 +137,7 @@ const Footer = () => {
                     <li key={linkIdx}>
                       <Link
                         href={link.href}
-                        className="text-muted-foreground hover:text-[#f1d59f] hover:underline underline-offset-4 transition-all duration-200 ease-in-out block py-1"
+                        className="font-nbMono text-xs text-muted-foreground hover:text-[#f1d59f] hover:underline underline-offset-4 transition-all duration-200 ease-in-out block py-1"
                       >
                         {link.label}
                       </Link>
@@ -157,7 +158,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
             >
-              <FaFacebookF className="h-6 w-6" />
+              <FaLinkedin className="h-5 w-5" />
             </Link>
             <Link
               href="https://wa.me/+447448504110"
@@ -165,7 +166,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
             >
-              <FaWhatsapp className="h-6 w-6" />
+              <FaWhatsapp className="h-5 w-5" />
             </Link>
             <Link
               href="https://x.com/Gustoprof007"
@@ -173,24 +174,17 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
             >
-              <FaXTwitter className="h-6 w-6" />
+              <FaXTwitter className="h-5 w-5" />
             </Link>
-            <Link
-              href="https://www.instagram.com/gustoprofessionals/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
-            >
-              <FaInstagram className="h-6 w-6" />
-            </Link>
+
             <Link
               href="mailto:info.gustoprofessionals@gmail.com"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
             >
-              <FaEnvelope className="h-6 w-6" />
+              <FaEnvelope className="h-5 w-5" />
             </Link>
           </div>
-          <div className="space-y-2 text-xs text-muted-foreground">
+          <div className="font-nbMono space-y-2 text-xs text-muted-foreground">
             <p>© 2025 Drumbell Technologies. All rights reserved.</p>
           </div>
         </div>

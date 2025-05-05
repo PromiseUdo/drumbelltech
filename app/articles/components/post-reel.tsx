@@ -53,7 +53,7 @@ const PostsReel = ({
         <div className="border-white/20 relative backdrop-blur-lg">
           {/* Title */}
           <div className="mb-4 mt-5">
-            <p className="text-[#f1d59f] font-medium uppercase text-sm tracking-wide">
+            <p className="text-[#f1d59f] font-nbInternational  font-medium uppercase text-xs tracking-wide">
               {title}
             </p>
           </div>
@@ -89,15 +89,15 @@ const PostsReel = ({
                 className="col-span-full flex flex-col items-center justify-center py-12   border-b border-gray-300"
               >
                 <BookOpen className="w-12 h-12 text-[#f1d59f] mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-xs uppercase font-nbInternational  font-semibold text-white mb-2">
                   {emptyTitle}
                 </h3>
-                <p className="text-sm text-muted-foreground text-center max-w-md">
+                <p className="text-xs font-nbMono text-muted-foreground text-center max-w-md">
                   {emptyDescription}
                 </p>
                 <a
                   href="/blog"
-                  className="mt-4 flex items-center text-sm text-[#f1d59f] hover:text-[#05418f] transition-colors"
+                  className="mt-4 flex items-center text-xs text-[#f1d59f] hover:text-[#05418f] transition-colors font-nbMono"
                 >
                   <RefreshCw className="w-4 h-4 mr-2" />
                   Explore Other Posts

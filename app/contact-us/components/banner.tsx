@@ -40,11 +40,11 @@ const Banner = () => {
       <MaxWidthWrapper className="!px-4 md:!px-12 relative z-10">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl max-w-2xl text-white tracking-tight mb-5">
-            Get in Touch with Our Experts
+          <h2 className="font-nbInternational text-5xl max-w-2xl text-white tracking-tight mb-5">
+            Get in Touch
           </h2>
           {/* Subtitle */}
-          <p className="text-base text-white/90 max-w-lg mb-8">
+          <p className="font-nbMono text-xs text-muted-foreground max-w-lg mb-8">
             Have questions about our sservices or your project? Contact us today
             for personalized guidance and support.
           </p>

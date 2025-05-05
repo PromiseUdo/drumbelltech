@@ -14,10 +14,10 @@ export default function Home() {
         <MaxWidthWrapper className="py-16 md:py-20">
           <div className="flex flex-col space-y-12">
             <div className="flex flex-col space-y-6">
-              <h1 className="text-5xl  ">
+              <h1 className="text-5xl font-nbInternational ">
                 Your Digital Future, Powered by Innovation.
               </h1>
-              <p className="text-base text-white max-w-2xl">
+              <p className="font-nbMono text-xs text-white max-w-2xl">
                 We deliver cutting-edge development, stunning design, and robust
                 cybersecurity solutions.
               </p>
