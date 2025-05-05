@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <LoaderWrapper>
+
       <main className="bg-background text-foreground">
         <MaxWidthWrapper className="py-16 md:py-20">
           <div className="flex flex-col space-y-12">
@@ -29,6 +29,6 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </main>
-    </LoaderWrapper>
+
   );
 }
