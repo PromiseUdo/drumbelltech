@@ -103,7 +103,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
       {/* Animated Description */}
       <div
         ref={textRef}
-        className="font-nbMono mt-3 md:mt-6 text-5xl font-medium "
+        className="font-nbMono mt-3 md:mt-6 text-xs font-medium "
       >
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="inline-block">

@@ -13,7 +13,7 @@ export const sendContactFormEmail = async (
   message: string
 ) => {
   const { data, error } = await resend.emails.send({
-    from: "Drumbell Technologies <no-reply@gustoprofessionals.com>",
+    from: "Drumbell Technologies <no-reply@drumbelltechnologies.com>",
     to: "fortuneokwu@gmail.com",
     subject: "Confirmation Email",
     react: AdminEmailTemplate({
@@ -33,7 +33,7 @@ export const sendContactFormReplyEmail = async (
 ) => {
   try {
     const { data, error } = await resend.emails.send({
-      from: "Drumbell Technologies <no-reply@gustoprofessionals.com>",
+      from: "Drumbell Technologies <no-reply@drumbelltechnologies.com>",
       to: email,
       subject: "Message Received",
       react: EmailTemplate({
