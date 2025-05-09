@@ -49,13 +49,13 @@ const Header = ({ title = "Default Blog Title" }) => {
           >
             <ChevronLeft className="w-5 h-5 mr-2 text-white" />
 
-            <h2 className=" md:hidden text-sm text-[#f1d59f] truncate max-w-[80%] sm:max-w-[90%]">
+            <h2 className="font-nbMono md:hidden text-sm text-[#f1d59f] truncate max-w-[80%] sm:max-w-[90%]">
               Go back
             </h2>
           </Link>
 
           {/* Post Title */}
-          <h2 className="hidden md:block text-sm text-[#f1d59f]  truncate max-w-[80%] sm:max-w-[90%]">
+          <h2 className="font-nbMono hidden md:block text-sm text-[#f1d59f]  truncate max-w-[80%] sm:max-w-[90%]">
             {title}
           </h2>
         </div>

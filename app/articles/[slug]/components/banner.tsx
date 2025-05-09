@@ -39,15 +39,15 @@ const Banner = ({
       <MaxWidthWrapper className="!md:px-12 !lg:px-12 relative z-10">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           {/* Post Category */}
-          <p className="text-xs uppercase tracking-wider text-white/90 mb-3">
+          <p className="font-nbMono text-xs uppercase tracking-wider text-white/90 mb-3">
             {"article"}
           </p>
           {/* Post Title */}
-          <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4 max-w-3xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4 max-w-3xl font-nbInternational">
             {title}
           </h1>
           {/* Post Date and Reading Time */}
-          <p className="text-xs text-white/80 uppercase tracking-wider">
+          <p className="font-nbMono text-xs text-white/80 uppercase tracking-wider">
             {date} | {readTime}
           </p>
         </div>

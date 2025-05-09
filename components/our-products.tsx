@@ -31,7 +31,7 @@ const OurProducts = () => {
         Our Products
       </h2>
 
-      <div className="space-y-24">
+      <div className="space-y-12">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -103,7 +103,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
       {/* Animated Description */}
       <div
         ref={textRef}
-        className="font-nbMono mt-3 md:mt-6 text-xs font-medium "
+        className="font-nbMono mt-3 md:mt-6 text-base font-medium "
       >
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="inline-block">

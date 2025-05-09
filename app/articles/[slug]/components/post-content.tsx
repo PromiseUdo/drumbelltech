@@ -38,24 +38,37 @@ const richTextOptions = {
       }
     },
 
+    [BLOCKS.HEADING_1]: (node: any, children: any) => {
+      return (
+        <h2 className="font-nbInternational mt-6 text-2xl md:text-4xl font-semibold">
+          {children}
+        </h2>
+      );
+    },
     [BLOCKS.HEADING_2]: (node: any, children: any) => {
       return (
-        <h2 className="mt-6 text-2xl md:text-3xl font-semibold">{children}</h2>
+        <h2 className="font-nbInternational mt-6 text-xl md:text-3xl font-semibold">
+          {children}
+        </h2>
       );
     },
     [BLOCKS.HEADING_3]: (node: any, children: any) => {
       return (
-        <h2 className="mt-4 text-base md:text-lg font-semibold">{children}</h2>
+        <h2 className="font-nbInternational mt-4 text-base md:text-lg font-semibold">
+          {children}
+        </h2>
       );
     },
     [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
       return (
-        <p className="mt-2 text-base leading-relaxed font-normal">{children}</p>
+        <p className="font-nbMono mt-2 text-base leading-relaxed font-normal">
+          {children}
+        </p>
       );
     },
     [INLINES.HYPERLINK]: (node: any, children: any) => {
       return (
-        <a className="hover:underline font-semibold text-voks-secondary">
+        <a className="font-nbMono hover:underline font-semibold text-voks-secondary">
           {children}
         </a>
       );
