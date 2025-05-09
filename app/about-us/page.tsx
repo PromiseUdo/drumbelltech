@@ -6,13 +6,11 @@ import Banner from "./components/banner";
 
 const page = () => {
   return (
-    <div>
-      <div className="border-b border-gray-300 flex flex-col items-center w-full">
-        <Banner />
-        <About />
-        <WhyDrumbellTech />
-        <OurImpact />
-      </div>
+    <div className="bg-background border-b border-gray-300 flex flex-col items-center w-full">
+      <Banner />
+      <About />
+      <WhyDrumbellTech />
+      {/* <OurImpact /> */}
     </div>
   );
 };
