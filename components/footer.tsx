@@ -74,9 +74,9 @@ const Footer = () => {
   }, []);
 
   // Hide footer during loading
-  if (isLoading) {
-    return null;
-  }
+  // if (isLoading) {
+  //   return null;
+  // }
 
   return (
     <footer className="relative bg-background text-white">

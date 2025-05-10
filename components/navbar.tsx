@@ -85,9 +85,9 @@ const Navbar = () => {
   }, []);
 
   // Hide navbar during loading
-  if (isLoading) {
-    return null;
-  }
+  // if (isLoading) {
+  //   return null;
+  // }
 
   return (
     <div ref={navRef} className="sticky top-0 z-50 py-3 inset-x-0 bg-black">
@@ -183,28 +183,28 @@ const Navbar = () => {
             <div className="flex flex-col items-start space-y-1">
               <Link
                 href="/"
-                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
+                className="py-2 font-nbInternational  text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 href="/"
-                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
+                className="py-2 font-nbInternational   text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/"
-                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
+                className="py-2 font-nbInternational  text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Products
               </Link>
               <Link
                 href="/articles"
-                className="py-2 text-white hover:text-[#f1d59f] transition-colors duration-200"
+                className="py-2 font-nbInternational  text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Articles
