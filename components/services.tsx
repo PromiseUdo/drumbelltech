@@ -1,6 +1,12 @@
 "use client";
 
-import { Smartphone, ShieldCheck, Bug, Megaphone } from "lucide-react";
+import {
+  Smartphone,
+  ShieldCheck,
+  Bug,
+  Megaphone,
+  GitBranch,
+} from "lucide-react";
 
 const services = [
   {
@@ -20,10 +26,10 @@ const services = [
     icon: Bug,
   },
   {
-    title: "Digital Marketing",
+    title: "DevOps and CI/CD Implementation",
     description:
-      "Reach out your online audience with well-crafted media strategies",
-    icon: Megaphone,
+      "Streamline development with automated pipelines and deployments",
+    icon: GitBranch, // Suitable icon for DevOps, representing branching and automation
   },
 ];
 
