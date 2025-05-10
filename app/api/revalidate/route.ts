@@ -11,6 +11,7 @@ export async function POST(request: Request) {
 
   try {
     // Revalidate the blog index and all post pages
+    await revalidatePath("/"); // Blog index
     await revalidatePath("/articles"); // Blog index
     await revalidatePath("/articles/[slug]", "page"); // All post pages
     return NextResponse.json({ revalidated: true });
