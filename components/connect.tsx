@@ -85,7 +85,7 @@ const Connect = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden  py-12 md:py-0 mt-[12rem] md:mt-[5rem]  relative">
+    <div className="w-full overflow-hidden mt-[12rem] md:mt-[5rem]  relative">
       <h2 className="text-[#f1d59f] text-xs uppercase tracking-wide mb-8 font-nbInternational">
         Connect with us
       </h2>
