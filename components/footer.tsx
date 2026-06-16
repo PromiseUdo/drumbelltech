@@ -56,6 +56,7 @@ const Footer = () => {
     }
 
     // Listen for loader completion
+
     const handleLoaderComplete = () => {
       setIsLoading(false);
     };
@@ -179,7 +180,9 @@ const Footer = () => {
           </div>
           <div className="font-nbMono space-y-2 text-xs text-muted-foreground">
             <p>© 2026 Drumbell Technologies. All rights reserved.</p>
-            <p className="mt-2">Registered in the United Kingdom and Nigeria.</p>
+            <p className="mt-2">
+              Registered in the United Kingdom and Nigeria.
+            </p>
           </div>
         </div>
       </MaxWidthWrapper>
