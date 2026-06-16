@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "sonner";
-import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { Toaster } from 'sonner';
+import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Drumbell Technologies | Fintech & Software Development",
+  title: 'Drumbell Technologies | Fintech & Software Development',
   description:
-    "Drumbell Technologies is a UK-based software and fintech company delivering cutting-edge app development, cybersecurity, and digital solutions. Creators of GetChatBank and Blomgram.",
+    'Drumbell Technologies is a UK-based software and fintech company delivering cutting-edge app development, cybersecurity, and digital solutions. Creators of GetChatBank and Blomgram.',
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
           <div className="flex-grow flex-1">{children}</div>
           <Toaster />
 
-          <Link
+          {/* <Link
             href="https://wa.me/+447899365494"
             target="_blank"
             rel="noopener noreferrer"
@@ -43,7 +43,7 @@ export default function RootLayout({
             title="Chat with us on WhatsApp"
           >
             <FaWhatsapp className="w-7 h-7" />
-          </Link>
+          </Link> */}
           <Footer />
         </main>
       </body>
