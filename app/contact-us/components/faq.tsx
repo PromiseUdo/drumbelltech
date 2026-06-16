@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
@@ -14,24 +15,24 @@ const Faq = () => {
 
   const faqs: FAQ[] = [
     {
-      question: "What types of HSE training do you offer?",
+      question: "What services does Drumbell Technologies offer?",
       answer:
-        "We offer a range of HSE courses, including Health & Safety, First Aid, ISO/Lead Auditor, and more. Check our Courses page for details.",
+        "We offer a full suite of technology services including web and mobile app development, cybersecurity analysis, penetration testing, DevOps & CI/CD implementation, and digital marketing. We also build our own fintech products.",
     },
     {
-      question: "How can I register for a course?",
+      question: "How long does it take to build a web or mobile app?",
       answer:
-        "You can register by filling out the contact form, emailing us, or sending a WhatsApp message. We’ll guide you through the process.",
+        "Project timelines vary based on complexity. A simple MVP typically takes 4–8 weeks, while a full-featured product can take 3–6 months. We’ll give you a clear timeline during our initial consultation.",
     },
     {
-      question: "Do you offer online or in-person training?",
+      question: "Do you work with startups and early-stage companies?",
       answer:
-        "We provide both online and in-person training options, depending on the course. Contact us to discuss your preferences.",
+        "Absolutely. We love partnering with startups and early-stage companies. We understand the need for speed, scalability, and cost-efficiency, and we tailor our approach to fit your stage and budget.",
     },
     {
-      question: "What are your training locations?",
+      question: "What makes Drumbell Technologies different from other agencies?",
       answer:
-        "Our primary training center is at 712, Al Fahad Plaza Building, Opposite KFC, Al Rigga Road, Al Rigga, Dubai. We also offer on-site training for businesses.",
+        "We combine software development with deep cybersecurity expertise — security is built into everything we build, not bolted on later. We’re also a product company ourselves, which means we understand what it takes to ship and scale real products.",
     },
   ];
 

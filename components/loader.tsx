@@ -143,18 +143,32 @@ const Loader = ({ onComplete }: { onComplete: () => void }) => {
     <AnimatePresence>
       {percentage <= 100 && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-transparent text-white"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black text-white"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
         >
+          <motion.p
+            className="font-nbInternational text-[#f1d59f] text-xl mb-6 tracking-widest uppercase"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            Drumbell Technologies
+          </motion.p>
           <motion.div
-            className="text-5xl font-bold"
-            animate={{ scale: [1, 1.1, 1] }}
+            className="text-6xl font-bold text-white"
+            animate={{ scale: [1, 1.05, 1] }}
             transition={{ repeat: Infinity, duration: 0.8 }}
           >
             {percentage}%
           </motion.div>
+          <div className="mt-8 w-48 h-[2px] bg-white/20 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-[#f1d59f] rounded-full"
+              style={{ width: `${percentage}%` }}
+            />
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

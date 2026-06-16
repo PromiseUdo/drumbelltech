@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import React, { useEffect, useState } from 'react';
+import MaxWidthWrapper from './max-width-wrapper';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import {
   FaFacebookF,
   FaEnvelope,
   FaWhatsapp,
   FaInstagram,
   FaLinkedin,
-} from "react-icons/fa";
-import Link from "next/link";
-import { FaXTwitter } from "react-icons/fa6";
+} from 'react-icons/fa';
+import Link from 'next/link';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   const [openSection, setOpenSection] = useState<number | null>(null);
@@ -23,42 +23,35 @@ const Footer = () => {
 
   const footerContent = [
     {
-      heading: "Company",
+      heading: 'Company',
       links: [
-        { label: "About Us", href: "/" },
-        { label: "Products", href: "/" },
-        { label: "Contact Us", href: "/contact-us" },
-        { label: "Articles", href: "/articles" },
+        { label: 'About Us', href: '/about-us' },
+        { label: 'Products', href: '/#products' },
+        { label: 'Contact Us', href: '/contact-us' },
+        { label: 'Articles', href: '/articles' },
       ],
     },
     {
-      heading: "Services",
+      heading: 'Services',
       links: [
-        { label: "App development", href: "/" },
-        { label: "Penetration Testing", href: "/" },
-        { label: "Digital Marketing", href: "/" },
-        { label: "Cyber Security Analysis", href: "/" },
+        { label: 'App development', href: '/' },
+        { label: 'Penetration Testing', href: '/' },
+        { label: 'Digital Marketing', href: '/' },
+        { label: 'Cyber Security Analysis', href: '/' },
       ],
     },
     {
-      heading: "Products",
+      heading: 'Products',
       links: [
-        { label: "GetChatBank", href: "https://getchatbank.com/" },
-        { label: "Bloomgram", href: "https://blomgram.com/" },
-      ],
-    },
-    {
-      heading: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/legal/privacy-policy" },
-        { label: "Terms of Use", href: "/legal/terms-of-use" },
+        { label: 'Blomgram', href: 'https://blomgram.com/' },
+        { label: 'GetChatBank', href: 'https://getchatbank.com/' },
       ],
     },
   ];
 
   useEffect(() => {
     // Check initial hasLoaded state
-    if (sessionStorage.getItem("hasLoaded")) {
+    if (sessionStorage.getItem('hasLoaded')) {
       setIsLoading(false);
     }
 
@@ -66,10 +59,10 @@ const Footer = () => {
     const handleLoaderComplete = () => {
       setIsLoading(false);
     };
-    window.addEventListener("loaderComplete", handleLoaderComplete);
+    window.addEventListener('loaderComplete', handleLoaderComplete);
 
     return () => {
-      window.removeEventListener("loaderComplete", handleLoaderComplete);
+      window.removeEventListener('loaderComplete', handleLoaderComplete);
     };
   }, []);
 
@@ -81,8 +74,8 @@ const Footer = () => {
   return (
     <footer className="relative bg-background text-white">
       <MaxWidthWrapper className="py-10 !md:px-12 md:py-12 !lg:px-12 relative z-10">
-        {/* Desktop: 4 Columns */}
-        <div className="hidden md:grid md:grid-cols-4 gap-8">
+        {/* Desktop: 3 Columns */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {footerContent.map((column, idx) => (
             <div key={idx} className="space-y-4">
               <h3 className="font-nbInternational uppercase text-xs font-semibold text-white tracking-tight">
@@ -129,7 +122,7 @@ const Footer = () => {
               <div
                 id={`accordion-content-${idx}`}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openSection === idx ? "max-h-96 pb-4" : "max-h-0"
+                  openSection === idx ? 'max-h-96 pb-4' : 'max-h-0'
                 }`}
               >
                 <ul className="space-y-2">
@@ -153,7 +146,7 @@ const Footer = () => {
         <div className="mt-10 md:mt-12 border-t border-gray-500 pt-6 text-center">
           <div className="flex justify-center gap-6 mb-4">
             <Link
-              href="https://web.facebook.com/profile.php?id=61575082984278"
+              href="https://www.linkedin.com/company/drumbell-technologies"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
@@ -161,7 +154,7 @@ const Footer = () => {
               <FaLinkedin className="h-5 w-5" />
             </Link>
             <Link
-              href="https://wa.me/+447448504110"
+              href="https://wa.me/+447899365494"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
@@ -169,7 +162,7 @@ const Footer = () => {
               <FaWhatsapp className="h-5 w-5" />
             </Link>
             <Link
-              href="https://x.com/Gustoprof007"
+              href="https://x.com/DrumbellTech"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
@@ -178,14 +171,15 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="mailto:info.gustoprofessionals@gmail.com"
+              href="mailto:thedrumbell@gmail.com"
               className="text-muted-foreground hover:text-[#f1d59f] transition-colors"
             >
               <FaEnvelope className="h-5 w-5" />
             </Link>
           </div>
           <div className="font-nbMono space-y-2 text-xs text-muted-foreground">
-            <p>© 2025 Drumbell Technologies. All rights reserved.</p>
+            <p>© 2026 Drumbell Technologies. All rights reserved.</p>
+            <p className="mt-2">Registered in the United Kingdom and Nigeria.</p>
           </div>
         </div>
       </MaxWidthWrapper>

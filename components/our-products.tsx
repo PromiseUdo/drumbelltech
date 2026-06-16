@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
-import MaxWidthWrapper from "./max-width-wrapper";
 import { ExternalLinkIcon } from "lucide-react";
 
-// Example product
 const products = [
   {
     id: 1,
@@ -24,25 +22,37 @@ const products = [
   },
 ];
 
-const OurProducts = () => {
-  return (
-    <div className="w-full bg-background mt-[1.5rem] md:mt-[3rem]">
-      <h2 className="text-[#f1d59f] uppercase text-xs font-nbInternational tracking-wide mb-8">
-        Our Products
-      </h2>
+// Extracted into its own component so useTransform is called at the top level — not inside a loop
+const AnimatedWord = ({
+  word,
+  scrollYProgress,
+  progressStart,
+  progressEnd,
+}: {
+  word: string;
+  scrollYProgress: MotionValue<number>;
+  progressStart: number;
+  progressEnd: number;
+}) => {
+  const delay = 0.1;
+  const color = useTransform(
+    scrollYProgress,
+    [0, delay, delay + progressStart, delay + progressEnd],
+    ["#6b7280", "#6b7280", "#6b7280", "#ffffff"]
+  );
 
-      <div className="space-y-12">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
+  return (
+    <motion.span
+      style={{ color }}
+      className="md:mt-[0.5rem] inline-block whitespace-pre-wrap mr-2"
+    >
+      {word}
+    </motion.span>
   );
 };
 
 const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
   const containerRef = useRef(null);
-  const textRef = useRef(null);
   const [navbarHeight, setNavbarHeight] = useState(0);
 
   useEffect(() => {
@@ -86,14 +96,13 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
             group-hover:h-16 group-hover:opacity-100
             transition-all duration-500 ease-out overflow-hidden"
         >
-          <span className="text-[#f1d59f] uppercase font-nbInternational text-xs font-medium ">
+          <span className="text-[#f1d59f] uppercase font-nbInternational text-xs font-medium">
             {product.name}
           </span>
           <a
             target="_blank"
             href={product.link}
-            className="text-white text-xs  hover:text-[#f1d59f]
-              transition-colors duration-200"
+            className="text-white text-xs hover:text-[#f1d59f] transition-colors duration-200"
           >
             <ExternalLinkIcon className="h-5 w-5 md:h-6 md:w-6" />
           </a>
@@ -101,10 +110,7 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
       </motion.div>
 
       {/* Animated Description */}
-      <div
-        ref={textRef}
-        className="font-nbMono mt-3 md:mt-6 text-base font-medium "
-      >
+      <div className="font-nbMono mt-3 md:mt-6 text-base font-medium">
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="inline-block">
             {line.map((word, wordIndex) => {
@@ -112,26 +118,35 @@ const ProductCard = ({ product }: { product: (typeof products)[0] }) => {
                 lines.slice(0, lineIndex).flat().length + wordIndex;
               const progressStart = (wordIndexGlobal / totalWords) * 0.9;
               const progressEnd = ((wordIndexGlobal + 1) / totalWords) * 0.9;
-              const delay = 0.1;
-
-              const color = useTransform(
-                scrollYProgress,
-                [0, delay, delay + progressStart, delay + progressEnd],
-                ["#6b7280", "#6b7280", "#6b7280", "#ffffff"]
-              );
 
               return (
-                <motion.span
+                <AnimatedWord
                   key={`${lineIndex}-${wordIndex}`}
-                  style={{ color }}
-                  className="md:mt-[0.5rem] inline-block whitespace-pre-wrap mr-2"
-                >
-                  {word}
-                </motion.span>
+                  word={word}
+                  scrollYProgress={scrollYProgress}
+                  progressStart={progressStart}
+                  progressEnd={progressEnd}
+                />
               );
             })}
             <br />
           </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const OurProducts = () => {
+  return (
+    <div className="w-full bg-background mt-[1.5rem] md:mt-[3rem]">
+      <h2 className="text-[#f1d59f] uppercase text-xs font-nbInternational tracking-wide mb-8">
+        Our Products
+      </h2>
+
+      <div className="space-y-12">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

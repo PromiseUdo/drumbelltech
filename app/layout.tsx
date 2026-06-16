@@ -3,17 +3,18 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Drumbell Technologies",
-  description: "IT Agency",
+  title: "Drumbell Technologies | Fintech & Software Development",
+  description:
+    "Drumbell Technologies is a UK-based software and fintech company delivering cutting-edge app development, cybersecurity, and digital solutions. Creators of GetChatBank and Blomgram.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 
@@ -24,8 +25,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      {" "}
-      {/* Add 'dark' class for default dark mode */}
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
@@ -43,7 +42,7 @@ export default function RootLayout({
             aria-label="Chat with us on WhatsApp"
             title="Chat with us on WhatsApp"
           >
-            <MessageCircle className="w-7 h-7" />
+            <FaWhatsapp className="w-7 h-7" />
           </Link>
           <Footer />
         </main>

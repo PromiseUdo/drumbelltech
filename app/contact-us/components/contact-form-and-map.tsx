@@ -1,23 +1,23 @@
-"use client";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { LoaderCircle } from "lucide-react";
-import MaxWidthWrapper from "@/components/max-width-wrapper";
-import { useForm } from "react-hook-form";
-import { Turnstile } from "@marsidev/react-turnstile";
-import { useRef } from "react"; // Add useRef
+'use client';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { LoaderCircle } from 'lucide-react';
+import MaxWidthWrapper from '@/components/max-width-wrapper';
+import { useForm } from 'react-hook-form';
+import { Turnstile } from '@marsidev/react-turnstile';
+import { useRef, useState, useEffect } from 'react';
 import {
   ContactFormSchema,
   zContactFormSchema,
-} from "@/types/contact-form-schema";
-import { z } from "zod";
-import { useAction } from "next-safe-action/hooks";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { sendContactFormEmailAction } from "@/server/actions/send-contact-email-action";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+} from '@/types/contact-form-schema';
+import { z } from 'zod';
+import { useAction } from 'next-safe-action/hooks';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { sendContactFormEmailAction } from '@/server/actions/send-contact-email-action';
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
 import {
   Form,
   FormControl,
@@ -25,28 +25,30 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from '@/components/ui/form';
 
 const ContactFormAndMap = () => {
   const form = useForm<z.infer<typeof ContactFormSchema>>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-      whatsappNumber: "",
-      "cf-turnstile-response": "",
+      name: '',
+      email: '',
+      message: '',
+      whatsappNumber: '',
+      'cf-turnstile-response': '',
     },
   });
-  const siteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || "";
+  const siteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || '';
   const router = useRouter();
-  const turnstileRef = useRef<any>(null); // Create a ref for Turnstile
+  const turnstileRef = useRef<any>(null);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const { execute, result, isExecuting } = useAction(
     sendContactFormEmailAction,
     {
       onSuccess: (data) => {
-        toast.dismiss("contact-form-toast");
+        toast.dismiss('contact-form-toast');
 
         if (data?.data?.error) {
           toast.error(data.data.error);
@@ -62,16 +64,16 @@ const ContactFormAndMap = () => {
       },
       onExecute: (data) => {},
       onError({ error }) {
-        toast.dismiss("contact-form-toast");
+        toast.dismiss('contact-form-toast');
         console.error(error);
-        toast.error("Form submission failed");
+        toast.error('Form submission failed');
       },
-    }
+    },
   );
 
   async function onSubmit(values: zContactFormSchema) {
-    toast.loading("Submitting form", {
-      id: "contact-form-toast",
+    toast.loading('Submitting form', {
+      id: 'contact-form-toast',
     });
     execute(values);
   }
@@ -83,7 +85,7 @@ const ContactFormAndMap = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1  gap-8"
         >
           {/* Contact Form */}
           <div className="p-3 md:p-8 rounded border border-[#f1d59f]">
@@ -170,20 +172,22 @@ const ContactFormAndMap = () => {
                         Let us know you're human
                       </FormLabel>
                       <FormControl>
-                        <Turnstile
-                          ref={turnstileRef} // Attach ref to Turnstile
-                          options={{
-                            theme: "dark",
-                            size: "flexible",
-                          }}
-                          siteKey={siteKey}
-                          onSuccess={(token) =>
-                            form.setValue("cf-turnstile-response", token)
-                          }
-                          onError={() => {
-                            console.log("Turnstile error");
-                          }}
-                        />
+                        {mounted && (
+                          <Turnstile
+                            ref={turnstileRef}
+                            options={{
+                              theme: 'dark',
+                              size: 'flexible',
+                            }}
+                            siteKey={siteKey}
+                            onSuccess={(token) =>
+                              form.setValue('cf-turnstile-response', token)
+                            }
+                            onError={() => {
+                              console.log('Turnstile error');
+                            }}
+                          />
+                        )}
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -202,7 +206,7 @@ const ContactFormAndMap = () => {
                       Sending...
                     </>
                   ) : (
-                    "Send Message"
+                    'Send Message'
                   )}
                 </Button>
               </form>
@@ -210,7 +214,7 @@ const ContactFormAndMap = () => {
           </div>
 
           {/* Map */}
-          <div className="h-96 lg:h-auto rounded overflow-hidden shadow">
+          {/* <div className="h-96 lg:h-auto rounded overflow-hidden shadow">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.848156879165!2d55.31098821502178!3d25.263103783863846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c4b7e1b7b8d%3A0x1f6b4b7b8b7e1b7!2sAl%20Fahad%20Plaza%2C%20Al%20Rigga%20Rd%2C%20Dubai%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1734567890123!5m2!1sen!2sus"
               width="100%"
@@ -220,7 +224,7 @@ const ContactFormAndMap = () => {
               loading="lazy"
               title="Location Map"
             ></iframe>
-          </div>
+          </div> */}
         </motion.div>
       </MaxWidthWrapper>
     </section>

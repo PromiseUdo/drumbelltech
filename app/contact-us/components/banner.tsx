@@ -45,7 +45,7 @@ const Banner = () => {
           </h2>
           {/* Subtitle */}
           <p className="font-nbMono text-xs text-muted-foreground max-w-lg mb-8">
-            Have questions about our sservices or your project? Contact us today
+            Have questions about our services or your project? Contact us today
             for personalized guidance and support.
           </p>
           {/* CTA Button */}

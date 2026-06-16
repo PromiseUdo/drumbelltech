@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Smartphone,
   ShieldCheck,
@@ -26,10 +24,16 @@ const services = [
     icon: Bug,
   },
   {
+    title: "Digital Marketing",
+    description:
+      "Grow your brand with data-driven campaigns and targeted digital strategies",
+    icon: Megaphone,
+  },
+  {
     title: "DevOps and CI/CD Implementation",
     description:
       "Streamline development with automated pipelines and deployments",
-    icon: GitBranch, // Suitable icon for DevOps, representing branching and automation
+    icon: GitBranch,
   },
 ];
 
@@ -62,32 +66,6 @@ export default function Services() {
         </div>
       </div>
 
-      <style jsx>{`
-        .marquee-wrapper {
-          position: relative;
-          width: 100%;
-          overflow: hidden;
-        }
-
-        .marquee-track {
-          display: flex;
-          width: max-content;
-          animation: scroll-reverse 30s linear infinite;
-        }
-
-        @keyframes scroll-reverse {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        .service-box {
-          flex-shrink: 0;
-        }
-      `}</style>
     </div>
   );
 }

@@ -1,11 +1,10 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import MaxWidthWrapper from "./max-width-wrapper";
-import Link from "next/link";
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion, Variants } from "framer-motion";
+import React, { useEffect, useRef, useState } from 'react';
+import MaxWidthWrapper from './max-width-wrapper';
+import Link from 'next/link';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -13,26 +12,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-
-  const iconVariants: Variants = {
-    closed: { rotate: 0, transition: { duration: 0.3, ease: "easeInOut" } },
-    open: { rotate: 90, transition: { duration: 0.3, ease: "easeInOut" } },
-  };
-
-  const mobileMenuVariants: Variants = {
-    closed: {
-      opacity: 0,
-      y: -20,
-      pointerEvents: "none" as const,
-      transition: { duration: 0.3, ease: "easeInOut" },
-    },
-    open: {
-      opacity: 1,
-      y: 0,
-      pointerEvents: "auto" as const,
-      transition: { duration: 0.3, ease: "easeInOut" },
-    },
-  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -44,32 +23,32 @@ const Navbar = () => {
         setIsMenuOpen(false);
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Toggle theme
   const toggleTheme = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
-    document.documentElement.classList.toggle("dark", newMode);
-    localStorage.setItem("theme", newMode ? "dark" : "light");
+    document.documentElement.classList.toggle('dark', newMode);
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
   };
 
   // Sync theme and listen for loader completion
   useEffect(() => {
     // Theme sync
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-      const isDark = savedTheme === "dark";
+      const isDark = savedTheme === 'dark';
       setIsDarkMode(isDark);
-      document.documentElement.classList.toggle("dark", isDark);
+      document.documentElement.classList.toggle('dark', isDark);
     } else {
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem('theme', 'dark');
     }
 
     // Check initial hasLoaded state
-    if (sessionStorage.getItem("hasLoaded")) {
+    if (sessionStorage.getItem('hasLoaded')) {
       setIsLoading(false);
     }
 
@@ -77,10 +56,10 @@ const Navbar = () => {
     const handleLoaderComplete = () => {
       setIsLoading(false);
     };
-    window.addEventListener("loaderComplete", handleLoaderComplete);
+    window.addEventListener('loaderComplete', handleLoaderComplete);
 
     return () => {
-      window.removeEventListener("loaderComplete", handleLoaderComplete);
+      window.removeEventListener('loaderComplete', handleLoaderComplete);
     };
   }, []);
 
@@ -110,13 +89,13 @@ const Navbar = () => {
                 About Us
               </Link>
               <Link
-                href="/"
+                href="/#services"
                 className="font-nbInternational   text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Services
               </Link>
               <Link
-                href="/"
+                href="/#products"
                 className="font-nbInternational  text-foreground glassy-effect px-4 py-2 rounded-md transition-colors duration-200 hover:text-[#f1d59f]"
               >
                 Products
@@ -129,13 +108,19 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="hidden md:flex items-center">
-            <Button
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              href="/contact-us"
+              className="font-nbInternational text-xs text-black bg-[#f1d59f] hover:bg-[#e8c882] px-4 py-2 rounded-md transition-colors duration-200"
+            >
+              Get in Touch
+            </Link>
+            {/* <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
               aria-label={
-                isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
               }
               className="glassy-effect p-2 rounded-md hover:bg-accent/50 transition-colors duration-200"
             >
@@ -144,7 +129,7 @@ const Navbar = () => {
               ) : (
                 <Moon className="w-5 h-5 text-muted-foreground" />
               )}
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile trigger */}
@@ -154,49 +139,46 @@ const Navbar = () => {
               className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <motion.div
-                variants={iconVariants}
-                initial="closed"
-                animate={isMenuOpen ? "open" : "closed"}
+              <div
+                className={`transition-transform duration-300 ease-in-out ${isMenuOpen ? 'rotate-90' : 'rotate-0'}`}
               >
                 {isMenuOpen ? (
                   <X className="h-6 w-6 text-white" />
                 ) : (
                   <Menu className="h-6 w-6 text-white" />
                 )}
-              </motion.div>
+              </div>
             </Button>
           </div>
         </div>
 
-        <motion.div
+        <div
           ref={mobileMenuRef}
-          variants={mobileMenuVariants}
-          initial="closed"
-          animate={isMenuOpen ? "open" : "closed"}
-          className="fixed top-[4rem] left-0 right-0 md:hidden border-b border-t border-[#f1d59f50] bg-background shadow-lg z-50 overflow-y-auto"
-          style={{
-            maxHeight: "calc(100vh - 4rem)",
-          }}
+          className={`fixed top-[4rem] left-0 right-0 md:hidden border-b border-t border-[#f1d59f50] bg-background shadow-lg z-50 overflow-y-auto transition-all duration-300 ease-in-out ${
+            isMenuOpen
+              ? 'opacity-100 pointer-events-auto translate-y-0'
+              : 'opacity-0 pointer-events-none -translate-y-5'
+          }`}
+          style={{ maxHeight: 'calc(100vh - 4rem)' }}
         >
           <div className="px-4 py-4 space-y-1">
             <div className="flex flex-col items-start space-y-1">
               <Link
-                href="/"
+                href="/about-us"
                 className="py-2 font-nbInternational  text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
-                href="/"
+                href="/#services"
                 className="py-2 font-nbInternational   text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
-                href="/"
+                href="/#products"
                 className="py-2 font-nbInternational  text-white hover:text-[#f1d59f] transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -211,7 +193,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </MaxWidthWrapper>
     </div>
   );

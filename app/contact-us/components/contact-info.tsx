@@ -22,12 +22,12 @@ const ContactInfo = () => {
                   Linkedin
                 </p>
                 <a
-                  href="/"
+                  href="https://www.linkedin.com/company/drumbell-technologies"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-nbMono text-muted-foreground group-hover:text-[#1e1e1e] hover:text-safetyYellow text-xs "
                 >
-                  Follow us on Linkedin
+                  Follow us on LinkedIn
                 </a>
               </div>
             </motion.div>
@@ -55,13 +55,14 @@ const ContactInfo = () => {
                   Email
                 </p>
                 <a
-                  href="mailto:info.gustoprofessionals@gmail.com"
+                  href="mailto:thedrumbell@gmail.com"
                   className="font-nbMono group-hover:text-[#1e1e1e] text-muted-foreground  text-xs "
                 >
-                  fortuneokwu@gmail.com
+                  thedrumbell@gmail.com
                 </a>
               </div>
             </motion.div>
+
           </div>
         </div>
       </MaxWidthWrapper>
